@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SIT 725 Prac 1</title>
+    <meta name="description" content="basic template for SIT 725 Prac 1">
+    <meta name="author" content="SitePoint">
+    <meta property="og:title" content="SIT 725 Prac 1">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="basic template for SIT 725 Prac 1">
+    
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            background-color: #f5f5f5;
+        }
+        main {
+            flex: 1 0 auto;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .instructions {
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 8px;
+            background-color: white;
+        }
+        .github-steps {
+            margin-left: 20px;
+        }
+        .screenshot {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            margin: 10px 0;
+            max-width: 100%;
+        }
+        .btn-large {
+            margin: 10px;
+        }
+        .feature-icon {
+            font-size: 4rem;
+            color: #26a69a;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <div class="feature-icon">⚙️</div>
+                    <h1 id="heading" class="center-align teal-text">SIT 725 Task 1.4P</h1>
+                    <p class="flow-text">Interactive Web Programming Demonstration</p>
+                </div>
+                
+                <div class="col s12 center-align">
+                    <a class="waves-effect waves-light btn-large" onclick="changeText()">
+                        <i class="material-icons left">cached</i>Change Text
+                    </a>
+                    <a class="waves-effect waves-light btn-large blue" onclick="changeColor()">
+                        <i class="material-icons left">palette</i>Change Color
+                    </a>
+                    <a class="waves-effect waves-light btn-large red" onclick="resetAll()">
+                        <i class="material-icons left">refresh</i>Reset
+                    </a>
+                </div>
+                
+                <div class="col s12">
+                    <div class="card-panel instructions">
+                        <h4>Step-by-Step Instructions</h4>
+                        <ol>
+                            <li>Create a GitHub account if you don't have one</li>
+                            <li>Create a new <strong>public</strong> repository named <strong>SIT725</strong></li>
+                            <li>Create an HTML file with this code</li>
+                            <li>Create a JavaScript file with the interactive functions</li>
+                            <li>Upload both files to your repository</li>
+                            <li>Take a screenshot of your working page</li>
+                            <li>Submit the GitHub link and screenshot PDF to OnTrack</li>
+                        </ol>
+                        
+                        <h5>GitHub Commands You Might Need:</h5>
+                        <pre class="github-steps">
+git init
+git add .
+git commit -m "First commit"
+git branch -M main
+git remote add origin [your-repository-url]
+git push -u origin main
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="page-footer teal">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h5 class="white-text">SIT725 - Introduction to Programming</h5>
+                    <p class="grey-text text-lighten-4">Task 1.4P - GitHub and Basic Web Programming</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
