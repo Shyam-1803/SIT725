@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .calculator { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        input, button { padding: 8px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Simple Calculator</h1>
+    
+    <div class="calculator">
+        <h2>Addition Calculator (GET)</h2>
+        <form action="/add" method="GET">
+            <input type="number" name="num1" placeholder="First number" required>
+            <span>+</span>
+            <input type="number" name="num2" placeholder="Second number" required>
+            <button type="submit">Calculate</button>
+        </form>
+    </div>
+    
+    <div class="calculator">
+        <h2>Subtraction Calculator (GET)</h2>
+        <form action="/subtract" method="GET">
+            <input type="number" name="num1" placeholder="First number" required>
+            <span>-</span>
+            <input type="number" name="num2" placeholder="Second number" required>
+            <button type="submit">Calculate</button>
+        </form>
+    </div>
+    
+    <div class="calculator">
+        <h2>Addition Calculator (POST)</h2>
+        <form action="/add" method="POST">
+            <input type="number" name="num1" placeholder="First number" required>
+            <span>+</span>
+            <input type="number" name="num2" placeholder="Second number" required>
+            <button type="submit">Calculate</button>
+        </form>
+    </div>
+    
+    <p>Visit the <a href="/hello">/hello</a> endpoint.</p>
+</body>
+</html>
