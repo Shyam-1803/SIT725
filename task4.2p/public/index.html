@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT725 4.2P - Database Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Comment System</h1>
+        <p>This demonstrates adding a database. All data is saved and retrieved from an SQLite database on the server.</p>
+        
+        <form id="commentForm">
+            <input type="text" id="nameInput" placeholder="Your Name" required>
+            <textarea id="messageInput" placeholder="Your Message" required></textarea>
+            <button type="submit">Post Comment</button>
+        </form>
+
+        <div id="commentList">
+            <h2>Comments will be loaded here from the database...</h2>
+        </div>
+    </div>
+
+    <script>
+        // Function to load comments from the server (database)
+        function loadComments() {
+            fetch('/api/comments')
+                .then(response => response.json())
+                .then(data => {
+                    const commentList = document.getElementById('commentList');
+                    commentList.innerHTML = '<h2>Comments:</h2>'; // Clear loading message
+
+                    if (data.comments.length === 0) {
+                        commentList.innerHTML += '<p>No comments yet. Be the first to post!</p>';
+                        return;
+                    }
+
+                    data.comments.forEach(comment => {
+                        const commentElement = document.createElement('div');
+                        commentElement.className = 'comment';
+                        commentElement.innerHTML = `
+                            <strong>${comment.name}</strong> 
+                            <span>(${new Date(comment.created_at).toLocaleString()})</span>
+                            <p>${comment.message}</p>
+                        `;
+                        commentList.appendChild(commentElement);
+                    });
+                })
+                .catch(error => console.error('Error loading comments:', error));
+        }
+
+        // Function to handle form submission
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from refreshing the page
+
+            const name = document.getElementById('nameInput').value;
+            const message = document.getElementById('messageInput').value;
+
+            // Send the new comment to the server to be saved in the database
+            fetch('/api/comments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, message }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert("Error: " + data.error);
+                } else {
+                    // Clear the form and reload the comments
+                    document.getElementById('commentForm').reset();
+                    loadComments(); 
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("An error occurred while posting the comment.");
+            });
+        });
+
+        // Load comments when the page finishes loading
+        window.onload = loadComments;
+    </script>
+</body>
+</html>
