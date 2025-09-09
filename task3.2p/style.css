@@ -1,0 +1,29 @@
+/* style.css */
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    /* Adds a subtle background pattern */
+    background-color: #fafafa;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Adds some spacing between sections */
+.section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Makes the initial text a bit larger and smoother */
+.flow-text {
+    font-weight: 300;
+}
+
+/* Custom style for the card action links */
+.card-action a {
+    font-weight: 500;
+}

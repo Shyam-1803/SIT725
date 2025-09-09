@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT725 3.2P - Materialize Sandbox</title>
+    <!-- Import Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Import materialize.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Import our own custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-wrapper blue darken-4">
+            <div class="container">
+                <a href="#" class="brand-logo">SIT725 3.2P</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#cards">Cards</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Side Navigation -->
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#about">About</a></li>
+        <li><a href="#cards">Cards</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Main Content Container -->
+    <div class="container">
+
+        <!-- Section: About -->
+        <section id="about" class="section scrollspy">
+            <h2 class="header">Welcome to the Sandbox</h2>
+            <p class="flow-text">This page demonstrates various Materialize CSS components. Click the floating button to see a toast message!</p>
+            <a class="waves-effect waves-light btn" onclick="demoClick()"><i class="material-icons left">cloud</i>Regular Button</a>
+            <!-- Floating Action Button -->
+            <div class="fixed-action-btn">
+                <a class="btn-floating btn-large red pulse">
+                    <i class="large material-icons">add</i>
+                </a>
+                <ul>
+                    <li><a class="btn-floating green" onclick="M.toast({html: 'Email'})"><i class="material-icons">email</i></a></li>
+                    <li><a class="btn-floating yellow darken-1" onclick="M.toast({html: 'Favorite'})"><i class="material-icons">favorite</i></a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Section: Cards -->
+        <section id="cards" class="section scrollspy">
+            <h4>Materialize Cards</h4>
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/300/200?random=1" alt="Random Image">
+                            <span class="card-title">Card One</span>
+                        </div>
+                        <div class="card-content">
+                            <p>This is a simple card made with Materialize. It's a great way to display content.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" onclick="changeCardText(1)">Change Text</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/300/200?random=2" alt="Random Image">
+                            <span class="card-title">Card Two</span>
+                        </div>
+                        <div class="card-content">
+                            <p>This is another simple card. The text can be changed by clicking the link below.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" onclick="changeCardText(2)">Change Text</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/300/200?random=3" alt="Random Image">
+                            <span class="card-title">Card Three</span>
+                        </div>
+                        <div class="card-content">
+                            <p>This is the third card. All cards use the grid system ('col s12 m6 l4') to layout.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" onclick="changeCardText(3)">Change Text</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Section: Contact Form -->
+        <section id="contact" class="section scrollspy">
+            <h4>Contact Form</h4>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">person</i>
+                            <input id="icon_prefix" type="text" class="validate">
+                            <label for="icon_prefix">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">phone</i>
+                            <input id="icon_telephone" type="tel" class="validate">
+                            <label for="icon_telephone">Telephone</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">message</i>
+                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Your Message</label>
+                        </div>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="button" onclick="M.toast({html: 'Message (not really) sent!'})">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </div> <!-- End of Container -->
+
+    <!-- Footer -->
+    <footer class="page-footer blue darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">SIT725 3.2P Demo</h5>
+                    <p class="grey-text text-lighten-4">This is a demonstration page for the "Getting Graphical" practical task.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+            © 2023 Your Name
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Imports at the end of body for better loading -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
